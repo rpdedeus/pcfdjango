@@ -1,0 +1,7 @@
+---
+applications:
+- name: pcfdjango
+  memory: 512M
+  instances: 1
+  buildpack: python_buildpack
+  command: gunicorn pcfdjango.wsgi:application
