@@ -74,10 +74,25 @@ WSGI_APPLICATION = 'pcfdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+ENGINE = os.environ.get('DB_ENGINE')
+NAME = os.environ.get('DB_NAME')
+USER = os.environ.get('DB_USER')
+PASSWORD = os.environ.get('DB_PASSWORD')
+HOST = os.environ.get('DB_HOST')
+PORT = os.environ.get('DB_PORT')
+
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'NAME': NAME,
+        'HOST': HOST,
+        'PORT': PORT,
+        'ENGINE': ENGINE,
     }
 }
 

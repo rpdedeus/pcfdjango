@@ -4,4 +4,4 @@ applications:
   memory: 512M
   instances: 1
   buildpack: python_buildpack
-  command: gunicorn pcfdjango.wsgi:application
+  command: python manage.py migrate && gunicorn pcfdjango.wsgi:application
